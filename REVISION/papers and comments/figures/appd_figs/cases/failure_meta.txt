@@ -1,6 +1,0 @@
-sample_id: 7636bd04f30236a9
-source_file: output/Qwen3-1.7B_attack/attack_llama3_results.json
-source_index: 429
-dataset: advbench
-attacker_model: qwen3-1.7b
-victim_model: llama-3-8b-instruction

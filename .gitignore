@@ -2,6 +2,12 @@
 .env
 *.env
 
+# Internal agent / paper-drafting material (not for publishing)
+CLAUDE.md
+.claude/
+REVISION/EXPERIMENT_SECTION_DRAFT.md
+REVISION/papers and comments/
+
 # Python caches
 __pycache__/
 *.py[cod]
@@ -66,4 +72,3 @@ refine-logs/
 *.swp
 .idea/
 .vscode/
-.claude/
