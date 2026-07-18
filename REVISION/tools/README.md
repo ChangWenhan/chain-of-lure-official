@@ -176,7 +176,7 @@ conda run -n agents python REVISION/tools/run_ts_judge.py \
   --workers 12 --max-retries 3 --max-tokens 512
 ```
 
-Never relabel a recorded TS judge as GPT-4o-mini or another model.
+Recorded TS judgments must be reported under the judge used to produce them.
 
 ## Coverage Checks
 
