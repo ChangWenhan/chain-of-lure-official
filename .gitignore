@@ -1,0 +1,69 @@
+# Local credentials and environment
+.env
+*.env
+
+# Python caches
+__pycache__/
+*.py[cod]
+.ruff_cache/
+
+# Local forensic traces
+.aris/traces/
+
+# ---- Experiment results / raw data (large, not for publishing) ----
+# Attack outputs
+output/
+output_lrm/
+output_trace/
+
+# Evaluation results (keep code, drop result dirs)
+evaluation/results_*/
+evaluation/*/results/
+
+# Compare-methods result data
+compare_methods/*/results/
+compare_methods/*/outputs/
+
+# Defense outputs
+defense/outputs/
+defense/results/
+
+# REVISION: only keep code, papers, small tables; drop raw evidence corpora
+REVISION/review-stage/
+REVISION/component_ablation/
+REVISION/generalization/
+REVISION/random_restart/
+REVISION/missing_mistral/
+REVISION/raw/
+REVISION/derived/
+
+# Large result artifacts anywhere
+*.jsonl
+*.checkpoint.jsonl
+results_*/
+**/results/
+
+# Result JSON files (attack outputs, defense outputs, story sets, judge scores)
+# These are experimental data, not source code.
+*.json
+!*.json.example
+!package.json
+!tsconfig.json
+
+# Model artifacts / pickles
+*.pt
+*.bin
+*.safetensors
+*.ckpt
+*.pkl
+
+# Logs
+*.log
+refine-logs/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+.claude/

@@ -1,0 +1,6 @@
+sample_id: b7dfed9ba19cbec4
+source_file: output/deepseek_attack_gptfuzz/deepseek_attack_gpt-3.5-turbo-0125.json
+source_index: 44
+dataset: gptfuzz
+attacker_model: deepseek-v3
+victim_model: gpt-3.5-turbo-0125
