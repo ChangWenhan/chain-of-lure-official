@@ -101,7 +101,7 @@ def report(rows: list[dict[str, Any]]) -> str:
     lines = [
         "# Matched-Judge Equal-Budget Restart Comparison",
         "",
-        "All TS cells in this table were scored with the legacy 1--5 TS rubric with the legacy 1--5 TS rubric. Actionable-ASR uses gpt-oss-safeguard; Policy-risk-ASR uses Qwen3Guard Unsafe+Controversial. The actual TS judge is retained in raw records and must not be relabeled as GPT-4o-mini.",
+        "All TS cells in this table were scored with the legacy 1--5 TS rubric. Actionable-ASR uses gpt-oss-safeguard; Policy-risk-ASR uses Qwen3Guard Unsafe+Controversial.",
         "",
         "Cell format: `TS / Actionable-ASR / Policy-risk-ASR`.",
         "",
