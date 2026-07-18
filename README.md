@@ -47,14 +47,24 @@ The harmful request is never stated directly; its goal is expressed across the n
 
 Reporting three criteria keeps distinct risk views visible: a response may violate policy (high ASR$_p$) without providing directly actionable assistance (lower ASR$_a$) — a distinction a single binary label would erase.
 
+## Attack methods
+
+CoL is provided in two generations, matching the paper's **CoL-single** and **CoL-multi**:
+
+- **`method_b/` — CoL-single (single-turn).** A generator LLM produces one narrative lure chain per harmful goal and submits it once to the target. Entry point: `m2m_attack_multiThread.py`.
+- **`method_c/` — CoL-multi (multi-turn, primary).** History-conditioned rewriting: when a narrative is refused, the refiner revises the *previous* narrative while keeping the original harmful goal as a fixed reference, and resubmits as an independent black-box query. Includes:
+  - `reattack_multiThread.py` — main CoL-multi runner (parameterized, resumable).
+  - `reattack_multiThread_random_restart.py` — equal-budget Random Restart baseline (each attempt generates a fresh narrative from the original goal, no history).
+  - `reattack_multiThread_trace.py` — per-iteration PPL/TS trace collection.
+  - `reattack_multiThread_lrm.py` — LRM-aware variant that captures victim reasoning.
+
 ## Repository contents
 
 | Path | Purpose |
 |---|---|
 | `attack_story/` | Narrative templates & story generation (`story_maker_multi_threding.py`) |
-| `method_a/` | **CoL-single** — one-shot narrative generation + attack (`dry_attack.py`) |
-| `method_b/` | M2M (model-to-model) multi-turn variants |
-| `method_c/` | **CoL-multi** (primary) + **Random Restart** baseline |
+| `method_b/` | **CoL-single** — single-turn narrative attack (`m2m_attack_multiThread.py`) |
+| `method_c/` | **CoL-multi** (primary, multi-turn) + **Random Restart** baseline + trace & LRM variants |
 | `evaluation/` | Three-judge evaluation pipeline (TS, Actionable-ASR, Policy-Risk-ASR) |
 | `compare_methods/` | Baseline red-team methods: GCG, AutoDAN, DAN, DarkCite, DRA, MAC, TAP, AmpleGCG-plus |
 | `defense/` | Defense-side evaluation |
